@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState } from 'react';
 import { Assignment } from "../Assignment";
 import styles from "./assignments.module.css";
 
@@ -8,6 +9,17 @@ interface AssignmentsProps {
 }
 
 export function Assignments({ assignments, setAssignments }: AssignmentsProps) {
+
+  const [completedAssignmentsCount, setCompletedAssignmentsCount] = useState(0);
+
+  const increment = () => {
+    setCompletedAssignmentsCount(completedAssignmentsCount + 1);
+  };
+
+  const decrement = () => {
+    setCompletedAssignmentsCount(completedAssignmentsCount - 1);
+  };
+
   const handleAssignmentDelete = (index: number) => {
     const updatedAssignments = [...assignments];
     updatedAssignments.splice(index, 1);
@@ -19,6 +31,9 @@ export function Assignments({ assignments, setAssignments }: AssignmentsProps) {
       key={index}
       text={assignment}
       onDelete={() => handleAssignmentDelete(index)}
+      completedAssignmentsCountValue={completedAssignmentsCount} 
+      onIncrement={increment}
+      onDecrement={decrement}
     />
   ));
 
@@ -32,7 +47,7 @@ export function Assignments({ assignments, setAssignments }: AssignmentsProps) {
 
         <div>
           <p className={styles.textPurple}>Completed Assignments</p>
-          <span>0 of {assignments.length}</span>
+          <span>{completedAssignmentsCount} of {assignments.length}</span>
         </div>
       </header>
 
