@@ -65,6 +65,11 @@ p.textCompleted {
 }
 
 
+.dueButton:hover {
+  background-color: purple;
+
+}
+
 .dueButton:focus {
   outline: none;
 
