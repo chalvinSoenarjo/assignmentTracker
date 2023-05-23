@@ -35,8 +35,7 @@ export function Header({ onNewAssignment }: HeaderProps) {
         <button
           type="submit"
           disabled={newAssignmentText.trim() === ""}
-          className={newAssignmentText.trim() === "" ? styles.disabledButton : ""}
-
+          className={newAssignmentText.trim() === "" ? styles.disabledButton : undefined}
         >
           Create <AiOutlinePlusCircle size={20} />
         </button>

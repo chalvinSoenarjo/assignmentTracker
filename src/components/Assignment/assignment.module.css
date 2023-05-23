@@ -2,19 +2,23 @@
   width: 100%;
   background: #262626;
   border: 1px solid #333333;
-  padding: 16px;
+  padding: 10px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: none;
   gap: 12px;
+
+  
 }
 
 .assignment p {
   font-size: 14px;
   line-height: 19px;
   color: #f2f2f2;
-  margin-right: auto;
+ 
+
+  
 }
 
 p.textCompleted {
@@ -46,4 +50,34 @@ p.textCompleted {
   background: none;
   border: none;
   color: #808080;
+  margin-left: auto
+
+}
+
+.dueButton {
+  padding: 8px 16px;
+  background-color: grey;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.dueButton:focus {
+  outline: none;
+
+}
+
+
+.tomorrow {
+  background-color: red;
+  color: white;
+  
+}
+
+.dueContainer {
+  display: flex;
+  align-items: center;
 }

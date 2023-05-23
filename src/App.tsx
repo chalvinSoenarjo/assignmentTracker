@@ -3,10 +3,10 @@ import { Header } from "./components/Header";
 import { Assignments } from "./components/Assignments";
 
 function App() {
-  const [assignments, setAssignments] = useState<string[]>([]);
+  const [assignments, setAssignments] = useState<{ text: string; dueDate?: Date; completed?: boolean }[]>([]);
 
   const handleNewAssignment = (text: string) => {
-    setAssignments([...assignments, text]);
+    setAssignments([...assignments, { text }]);
   };
 
   return (
